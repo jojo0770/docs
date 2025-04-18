@@ -1,0 +1,39 @@
+---
+title: "List Info"
+description: "List All Flow-Control Informations"
+api: "GET https://qstash.upstash.io/v2/flowControl/"
+authMethod: "bearer"
+---
+
+
+## Response
+<ResponseField name="" type="Array" required>
+    <ResponseField name="flowControlKey" type="string">
+    The key of of the flow control. 
+    </ResponseField>
+
+    <ResponseField name="waitListSize" type="integer">
+    The number of messages in the wait list that waits for `parallelism` set in the flow control.
+    </ResponseField>
+</ResponseField>
+<RequestExample>
+
+```sh
+curl -X GET https://qstash.upstash.io/v2/flowControl/  -H "Authorization: Bearer <token>"
+```
+</RequestExample>
+
+<ResponseExample>
+```json 200 OK
+[
+  {
+    "flowControlKey": "my-flow-control-key",
+    "waitListSize": 100
+  },
+  {
+    "flowControlKey": "second-control-key",
+    "waitListSize": 0
+  }
+]
+```
+</ResponseExample>

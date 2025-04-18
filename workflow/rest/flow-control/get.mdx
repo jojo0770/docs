@@ -26,3 +26,12 @@ authMethod: "bearer"
 curl -X GET https://qstash.upstash.io/v2/flowControl/YOUR_FLOW_CONTROL_KEY  -H "Authorization: Bearer <token>"
 ```
 </RequestExample>
+
+<ResponseExample>
+```json 200 OK
+{
+    "flowControlKey": "YOUR_FLOW_CONTROL_KEY",
+    "waitListSize": 100
+}
+```
+</ResponseExample>
